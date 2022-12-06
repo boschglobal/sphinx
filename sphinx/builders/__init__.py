@@ -411,6 +411,9 @@ class Builder:
         logger.info(__('%s added, %s changed, %s removed'),
                     len(added), len(changed), len(removed))
 
+        # 
+        self.env.docs_changed_or_removed = changed or removed
+
         # clear all files no longer present
         for docname in removed:
             self.events.emit('env-purge-doc', self.env, docname)

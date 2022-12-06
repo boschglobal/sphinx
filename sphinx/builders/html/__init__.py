@@ -1130,7 +1130,8 @@ class StandaloneHTMLBuilder(Builder):
 
     def dump_search_index(self) -> None:
         with progress_message(__('dumping search index in %s') % self.indexer.label()):
-            self.indexer.prune(self.env.all_docs)
+            if self.env.docs_changed_or_removed:
+                self.indexer.prune(self.env.all_docs)
             searchindexfn = path.join(self.outdir, self.searchindex_filename)
             # first write to a temporary file, so that if dumping fails,
             # the existing index won't be overwritten
