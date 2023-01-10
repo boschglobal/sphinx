@@ -131,7 +131,7 @@ If your theme package contains two or more themes, please call
 Templating
 ----------
 
-The :doc:`guide to templating </templating>` is helpful if you want to write your
+The :doc:`guide to templating <templating>` is helpful if you want to write your
 own templates.  What is important to keep in mind is the order in which Sphinx
 searches for templates:
 
@@ -328,7 +328,7 @@ code may use:
     # We connect this function to the step after the builder is initialized
     def setup(app):
         # Tell Sphinx about this configuration variable
-        app.add_config_value('my_javascript_variable')
+        app.add_config_value('my_javascript_variable', 0, 'html')
         # Run the function after the builder is initialized
         app.connect('builder-inited', add_js_variable)
 
