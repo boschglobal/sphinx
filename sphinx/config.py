@@ -146,6 +146,7 @@ class Config:
                                   'builders': ['man', 'text']},
                                  'env', []),
         'option_emphasise_placeholders': (False, 'env', []),
+        'parallel_batchsize': (10, 'env', [int]),
     }
 
     def __init__(self, config: dict[str, Any] = {}, overrides: dict[str, Any] = {}) -> None:
